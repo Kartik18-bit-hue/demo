@@ -14,9 +14,12 @@ class _MyHeaderDrawerState extends State<MyHeaderDrawer> {
       height: 200,
       padding: EdgeInsets.only(top: 20.0),
       child: Column(
+        
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          
           Container(
+            
             margin: EdgeInsets.only(bottom: 10),
             height: 70,
             decoration: BoxDecoration(

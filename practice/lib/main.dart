@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:practice/create_note.dart';
 import 'package:practice/privacy_policy.dart';
 import 'package:practice/send_feedback.dart';
 import 'package:practice/settings.dart';
+import 'package:practice/create_note.dart';
 
 import 'contacts.dart';
 import 'dashboard.dart';
@@ -9,17 +11,25 @@ import 'events.dart';
 import 'my_header_drawer.dart';
 import 'notes.dart';
 import 'notifications.dart';
-
+import 'create_note.dart';
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(primarySwatch: Colors.blueGrey,brightness: Brightness.dark),
+          home:  HomePage(),
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+  
+    
     );
   }
 }
@@ -53,13 +63,22 @@ class _HomePageState extends State<HomePage> {
       container = SendFeedbackPage();
     }
     return Scaffold(
+      
       appBar: AppBar(
+        
         backgroundColor: Colors.blueGrey,
         title: Text("Book Management"),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: (){
-        
-      },child: const Icon(Icons.add, color: Colors.black,),backgroundColor: Colors.blueAccent,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const CreateNote()));
+        },
+        child: const Icon(
+          Icons.add,
+          color: Colors.black,
+        ),
+        backgroundColor: Colors.blueAccent,
       ),
       body: container,
       drawer: Drawer(
@@ -69,6 +88,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 MyHeaderDrawer(),
                 MyDrawerList(),
+                
               ],
             ),
           ),
