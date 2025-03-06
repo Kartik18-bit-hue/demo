@@ -54,8 +54,12 @@ class _HomePageState extends State<HomePage> {
     }
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green[700],
+        backgroundColor: Colors.blueGrey,
         title: Text("Book Management"),
+      ),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        
+      },child: const Icon(Icons.add, color: Colors.black,),backgroundColor: Colors.blueAccent,
       ),
       body: container,
       drawer: Drawer(
