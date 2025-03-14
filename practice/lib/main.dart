@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:practice/create_note.dart';
+
 import 'package:practice/privacy_policy.dart';
 import 'package:practice/send_feedback.dart';
 import 'package:practice/settings.dart';
-import 'package:practice/create_note.dart';
 
-import 'contacts.dart';
+import 'package:practice/to_do_list.dart';
+
+import 'to_do_list.dart';
 import 'dashboard.dart';
 import 'events.dart';
 import 'my_header_drawer.dart';
 import 'notes.dart';
 import 'notifications.dart';
-import 'create_note.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -28,6 +29,10 @@ class _MyAppState extends State<MyApp> {
  
           home:  HomePage(),
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)
+
+      ),
+      
   
     
     );
@@ -47,8 +52,8 @@ class _HomePageState extends State<HomePage> {
     var container;
     if (currentPage == DrawerSections.dashboard) {
       container = DashboardPage();
-    } else if (currentPage == DrawerSections.contacts) {
-      container = ContactsPage();
+    } else if (currentPage == DrawerSections.to_do_list) {
+      container = To_Do_ListPage();
     } else if (currentPage == DrawerSections.events) {
       container = EventsPage();
     } else if (currentPage == DrawerSections.notes) {
@@ -74,7 +79,7 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => const CreateNote()));
+              MaterialPageRoute(builder: (context) => const NotesPage()));
         },
         child: const Icon(
           Icons.add,
@@ -109,8 +114,8 @@ class _HomePageState extends State<HomePage> {
         children: [
           menuItem(1, "Dashboard", Icons.dashboard_outlined,
               currentPage == DrawerSections.dashboard ? true : false),
-          menuItem(2, "Contacts", Icons.import_contacts,
-              currentPage == DrawerSections.contacts ? true : false),
+          menuItem(2, "To_Do_List", Icons.import_contacts,
+              currentPage == DrawerSections.to_do_list ? true : false),
           menuItem(3, "Events", Icons.event,
               currentPage == DrawerSections.events ? true : false),
           menuItem(4, "Notes", Icons.article,
@@ -140,7 +145,7 @@ class _HomePageState extends State<HomePage> {
             if (id == 1) {
               currentPage = DrawerSections.dashboard;
             } else if (id == 2) {
-              currentPage = DrawerSections.contacts;
+              currentPage = DrawerSections.to_do_list;
             } else if (id == 3) {
               currentPage = DrawerSections.events;
             } else if (id == 4) {
@@ -187,7 +192,7 @@ class _HomePageState extends State<HomePage> {
 
 enum DrawerSections {
   dashboard,
-  contacts,
+  to_do_list,
   events,
   notes,
   settings,
