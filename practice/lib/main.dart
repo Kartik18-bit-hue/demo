@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.blueGrey,brightness: Brightness.dark),
+ 
           home:  HomePage(),
       debugShowCheckedModeBanner: false,
   
@@ -65,10 +65,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       
       appBar: AppBar(
+      
+        backgroundColor: Colors.black,
         
-        backgroundColor: Colors.blueGrey,
-        title: Text("Book Management"),
+        title: Text("Book Management"),titleTextStyle: TextStyle(fontWeight: FontWeight.bold,fontSize:28.0,color: Colors.white),
       ),
+      backgroundColor: Colors.purple,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.of(context).push(

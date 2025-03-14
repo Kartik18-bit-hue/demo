@@ -11,30 +11,26 @@ class _NotesPageState extends State<NotesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-      appBar: AppBar(
-        title:Text('New Note')
-        
+      body: GridView.builder(
+        itemCount: 6,
+        gridDelegate:
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+        itemBuilder: (BuildContext context, int index) {
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 50,
+              width: 50,
+              color: Colors.blue,
+            ),
+          );
+        },
       ),
-      body: Column(
-        children: [
-          TextField(
-            style: TextStyle(
-              fontSize: 28.0, fontWeight: FontWeight.w400,color: Colors.white,),
-            decoration: InputDecoration(
-              border: InputBorder.none,
-              hintText: "Title"
-            ),
-          ),
-          TextField(
-            style: TextStyle(
-              fontSize: 28.0, fontWeight: FontWeight.w400,color: Colors.white,),
-            decoration: InputDecoration(
-              border: InputBorder.none,
-              hintText: "Title"
-            ),
-          )
-        ],
+      appBar: AppBar(
+        title: Text('New Note'),
+        titleTextStyle: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }

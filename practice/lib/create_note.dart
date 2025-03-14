@@ -13,18 +13,23 @@ class _CreateNoteState extends State<CreateNote> {
     return Scaffold(
       
       appBar: AppBar(
+        backgroundColor: Colors.black45,
         title:Text('New Note')
         
       ),
       body: Column(
+        
         children: [
           TextField(
             style: TextStyle(
               fontSize: 28.0, fontWeight: FontWeight.w400,
+              color: Colors.white,
             ),
             decoration: InputDecoration(
+              fillColor: Colors.purple,
               border: InputBorder.none,
             ),
+            
           )
         ],
       ),
