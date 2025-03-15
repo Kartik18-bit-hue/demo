@@ -1,0 +1,2 @@
+C:/Users/karti/practice/practice/android/app/.cxx/Debug/1e3l5k4w/x86/CMakeFiles/edit_cache.dir
+C:/Users/karti/practice/practice/android/app/.cxx/Debug/1e3l5k4w/x86/CMakeFiles/rebuild_cache.dir

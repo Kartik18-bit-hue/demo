@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import 'package:practice/privacy_policy.dart';
 import 'package:practice/send_feedback.dart';
@@ -23,13 +24,21 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  get backgroundColor => null;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
  
           home:  HomePage(),
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)
+      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      scaffoldBackgroundColor: backgroundColor,
+      appBarTheme: Theme.of(context).appBarTheme.copyWith(
+        backgroundColor: Colors.transparent,
+       
+      ),
+
 
       ),
       
